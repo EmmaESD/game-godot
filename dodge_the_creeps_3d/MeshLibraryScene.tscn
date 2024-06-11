@@ -10,7 +10,7 @@ material = SubResource( 4 )
 size = Vector3( 4, 5, 4 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 2, 3, 2 )
+extents = Vector3( 2.15891, 3, 2 )
 
 [node name="MeshLibrary" type="Spatial"]
 
@@ -18,6 +18,8 @@ extents = Vector3( 2, 3, 2 )
 mesh = SubResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="Wall"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall/StaticBody"]
 shape = SubResource( 3 )
