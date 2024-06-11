@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hoop_teamBlue.obj-73f261207dabc674d25f8d185c76294b.mesh"
+
+[deps]
+
+files=[ "res://.import/hoop_teamBlue.obj-73f261207dabc674d25f8d185c76294b.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/hoop_teamBlue.obj"
+dest_files=[ "res://.import/hoop_teamBlue.obj-73f261207dabc674d25f8d185c76294b.mesh", "res://.import/hoop_teamBlue.obj-73f261207dabc674d25f8d185c76294b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

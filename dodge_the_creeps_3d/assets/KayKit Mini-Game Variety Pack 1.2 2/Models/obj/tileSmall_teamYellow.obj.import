@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tileSmall_teamYellow.obj-3c01910ccc37c2fcf6cfdc95378b3ddd.mesh"
+
+[deps]
+
+files=[ "res://.import/tileSmall_teamYellow.obj-3c01910ccc37c2fcf6cfdc95378b3ddd.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/tileSmall_teamYellow.obj"
+dest_files=[ "res://.import/tileSmall_teamYellow.obj-3c01910ccc37c2fcf6cfdc95378b3ddd.mesh", "res://.import/tileSmall_teamYellow.obj-3c01910ccc37c2fcf6cfdc95378b3ddd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

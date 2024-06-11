@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rocksB_forest.obj-f6e63afb3762c31bd6949b63ed20d2d1.mesh"
+
+[deps]
+
+files=[ "res://.import/rocksB_forest.obj-f6e63afb3762c31bd6949b63ed20d2d1.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/rocksB_forest.obj"
+dest_files=[ "res://.import/rocksB_forest.obj-f6e63afb3762c31bd6949b63ed20d2d1.mesh", "res://.import/rocksB_forest.obj-f6e63afb3762c31bd6949b63ed20d2d1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

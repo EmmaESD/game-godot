@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/swiper_teamRed.obj-c07489f5d56abd42db73adc6ac6faacf.mesh"
+
+[deps]
+
+files=[ "res://.import/swiper_teamRed.obj-c07489f5d56abd42db73adc6ac6faacf.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/swiper_teamRed.obj"
+dest_files=[ "res://.import/swiper_teamRed.obj-c07489f5d56abd42db73adc6ac6faacf.mesh", "res://.import/swiper_teamRed.obj-c07489f5d56abd42db73adc6ac6faacf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

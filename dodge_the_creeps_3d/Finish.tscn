@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/fbx/flag_teamRed.fbx" type="PackedScene" id=1]
+
+[node name="Finish" type="KinematicBody"]
+
+[node name="Flag" type="Spatial" parent="."]
+
+[node name="flag_teamRed" parent="Flag" instance=ExtResource( 1 )]

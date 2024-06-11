@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/swiperDouble_teamRed.obj-f6a747a0eca4d8ca88e9bbb8dfcd8100.mesh"
+
+[deps]
+
+files=[ "res://.import/swiperDouble_teamRed.obj-f6a747a0eca4d8ca88e9bbb8dfcd8100.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/swiperDouble_teamRed.obj"
+dest_files=[ "res://.import/swiperDouble_teamRed.obj-f6a747a0eca4d8ca88e9bbb8dfcd8100.mesh", "res://.import/swiperDouble_teamRed.obj-f6a747a0eca4d8ca88e9bbb8dfcd8100.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

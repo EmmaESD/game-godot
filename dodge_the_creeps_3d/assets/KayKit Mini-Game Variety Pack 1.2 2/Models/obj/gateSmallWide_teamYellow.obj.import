@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/gateSmallWide_teamYellow.obj-f498f846bef4ab1c60d5d8a5d4bf0d69.mesh"
+
+[deps]
+
+files=[ "res://.import/gateSmallWide_teamYellow.obj-f498f846bef4ab1c60d5d8a5d4bf0d69.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/gateSmallWide_teamYellow.obj"
+dest_files=[ "res://.import/gateSmallWide_teamYellow.obj-f498f846bef4ab1c60d5d8a5d4bf0d69.mesh", "res://.import/gateSmallWide_teamYellow.obj-f498f846bef4ab1c60d5d8a5d4bf0d69.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

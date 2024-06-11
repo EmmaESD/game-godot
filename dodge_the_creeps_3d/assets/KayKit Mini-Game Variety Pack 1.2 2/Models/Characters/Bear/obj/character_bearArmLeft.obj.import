@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/character_bearArmLeft.obj-1b1eb1f3c74e9d307c428252aa2ef3e6.mesh"
+
+[deps]
+
+files=[ "res://.import/character_bearArmLeft.obj-1b1eb1f3c74e9d307c428252aa2ef3e6.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/Characters/Bear/obj/character_bearArmLeft.obj"
+dest_files=[ "res://.import/character_bearArmLeft.obj-1b1eb1f3c74e9d307c428252aa2ef3e6.mesh", "res://.import/character_bearArmLeft.obj-1b1eb1f3c74e9d307c428252aa2ef3e6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

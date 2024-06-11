@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tileSlopeLowHigh_teamYellow.obj-62e72a2f7229534063d69c730e419e04.mesh"
+
+[deps]
+
+files=[ "res://.import/tileSlopeLowHigh_teamYellow.obj-62e72a2f7229534063d69c730e419e04.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/tileSlopeLowHigh_teamYellow.obj"
+dest_files=[ "res://.import/tileSlopeLowHigh_teamYellow.obj-62e72a2f7229534063d69c730e419e04.mesh", "res://.import/tileSlopeLowHigh_teamYellow.obj-62e72a2f7229534063d69c730e419e04.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

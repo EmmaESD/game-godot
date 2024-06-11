@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tileHigh_desert.obj-65c6b2fe32bda552da3b3104c9e397ca.mesh"
+
+[deps]
+
+files=[ "res://.import/tileHigh_desert.obj-65c6b2fe32bda552da3b3104c9e397ca.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/tileHigh_desert.obj"
+dest_files=[ "res://.import/tileHigh_desert.obj-65c6b2fe32bda552da3b3104c9e397ca.mesh", "res://.import/tileHigh_desert.obj-65c6b2fe32bda552da3b3104c9e397ca.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

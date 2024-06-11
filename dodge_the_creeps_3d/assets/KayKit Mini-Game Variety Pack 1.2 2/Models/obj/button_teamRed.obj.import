@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/button_teamRed.obj-4cf174bfeeffefe93ed0b7e590893cec.mesh"
+
+[deps]
+
+files=[ "res://.import/button_teamRed.obj-4cf174bfeeffefe93ed0b7e590893cec.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/button_teamRed.obj"
+dest_files=[ "res://.import/button_teamRed.obj-4cf174bfeeffefe93ed0b7e590893cec.mesh", "res://.import/button_teamRed.obj-4cf174bfeeffefe93ed0b7e590893cec.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tileHigh_forest.obj-67e8959b42d71f76c009b4680e844ebc.mesh"
+
+[deps]
+
+files=[ "res://.import/tileHigh_forest.obj-67e8959b42d71f76c009b4680e844ebc.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/tileHigh_forest.obj"
+dest_files=[ "res://.import/tileHigh_forest.obj-67e8959b42d71f76c009b4680e844ebc.mesh", "res://.import/tileHigh_forest.obj-67e8959b42d71f76c009b4680e844ebc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

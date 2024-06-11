@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/character_dog.obj-4ae01b01086871765eb11095f3df0dcc.mesh"
+
+[deps]
+
+files=[ "res://.import/character_dog.obj-4ae01b01086871765eb11095f3df0dcc.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/character_dog.obj"
+dest_files=[ "res://.import/character_dog.obj-4ae01b01086871765eb11095f3df0dcc.mesh", "res://.import/character_dog.obj-4ae01b01086871765eb11095f3df0dcc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

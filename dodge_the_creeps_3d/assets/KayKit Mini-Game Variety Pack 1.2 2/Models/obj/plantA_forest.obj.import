@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plantA_forest.obj-dc854987943f66f164f7bce3bfe72400.mesh"
+
+[deps]
+
+files=[ "res://.import/plantA_forest.obj-dc854987943f66f164f7bce3bfe72400.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/plantA_forest.obj"
+dest_files=[ "res://.import/plantA_forest.obj-dc854987943f66f164f7bce3bfe72400.mesh", "res://.import/plantA_forest.obj-dc854987943f66f164f7bce3bfe72400.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

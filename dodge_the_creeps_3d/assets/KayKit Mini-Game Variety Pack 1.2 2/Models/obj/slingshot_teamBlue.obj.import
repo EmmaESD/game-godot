@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/slingshot_teamBlue.obj-c92710d1c7e76e22aaff0c0c5e628bcd.mesh"
+
+[deps]
+
+files=[ "res://.import/slingshot_teamBlue.obj-c92710d1c7e76e22aaff0c0c5e628bcd.mesh" ]
+
+source_file="res://assets/KayKit Mini-Game Variety Pack 1.2 2/Models/obj/slingshot_teamBlue.obj"
+dest_files=[ "res://.import/slingshot_teamBlue.obj-c92710d1c7e76e22aaff0c0c5e628bcd.mesh", "res://.import/slingshot_teamBlue.obj-c92710d1c7e76e22aaff0c0c5e628bcd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
