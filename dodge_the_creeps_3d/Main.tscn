@@ -23,6 +23,17 @@ _data = {
 script = ExtResource( 1 )
 mob_scene = ExtResource( 3 )
 
+[node name="Ground" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
+mesh = SubResource( 2 )
+
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.5, -0.777048, 0.382355, 0, 0.441506, 0.897258, -0.866025, -0.448629, 0.220753, 0, 34.5579, 14.7461 )
 shadow_enabled = true
