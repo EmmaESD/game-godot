@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://art/player.glb" type="PackedScene" id=2]
+[ext_resource path="res://Camera_follow.gd" type="Script" id=3]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.792278
 
 [sub_resource type="CylinderShape" id=2]
-radius = 0.907607
 height = 0.1438
+radius = 0.907607
 
 [sub_resource type="Animation" id=3]
 length = 1.2
@@ -52,9 +53,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.771765, 0 )
 shape = SubResource( 1 )
 
 [node name="MobDetector" type="Area" parent="."]
-monitorable = false
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="MobDetector"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06491, 0 )
@@ -63,4 +64,12 @@ shape = SubResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "float"
 anims/float = SubResource( 3 )
+
+[node name="target" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.794465, 0 )
+
+[node name="Camera" type="Camera" parent="target"]
+transform = Transform( 1, 0, 0, 0, 0.948578, 0.316543, 0, -0.316543, 0.948578, 0, 3.79728, 9.74007 )
+script = ExtResource( 3 )
+
 [connection signal="body_entered" from="MobDetector" to="." method="_on_MobDetector_body_entered"]
