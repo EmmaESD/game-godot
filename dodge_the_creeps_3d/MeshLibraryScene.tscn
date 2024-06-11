@@ -10,6 +10,7 @@ material = SubResource( 4 )
 size = Vector3( 4, 5, 4 )
 
 [sub_resource type="BoxShape" id=3]
+extents = Vector3( 2, 3, 2 )
 
 [node name="MeshLibrary" type="Spatial"]
 

@@ -1,4 +1,10 @@
-[gd_resource type="Environment" format=2]
+[gd_resource type="Environment" load_steps=2 format=2]
+
+[sub_resource type="ProceduralSky" id=1]
 
 [resource]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_custom_fov = 9.4
+background_energy = 0.86
 ambient_light_color = Color( 0.341176, 0.341176, 0.466667, 1 )
