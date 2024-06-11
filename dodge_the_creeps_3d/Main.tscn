@@ -38,6 +38,7 @@ collision_mask = 0
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137429, 0, 0 )
 mesh = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -137,6 +138,7 @@ __meta__ = {
 environment = ExtResource( 4 )
 
 [node name="Finish" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02185, 0, 0 )
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
