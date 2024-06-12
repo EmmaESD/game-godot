@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -25,6 +25,11 @@ _data = {
 }
 
 [sub_resource type="DynamicFont" id=6]
+size = 34
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 44
 font_data = ExtResource( 12 )
 
 [sub_resource type="Theme" id=7]
@@ -119,11 +124,11 @@ margin_left = 1.0
 margin_top = -4.0
 margin_right = 1.0
 margin_bottom = -4.0
+custom_fonts/font = SubResource( 8 )
 text = "Press Enter to retry"
 align = 1
 valign = 1
 __meta__ = {
-"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
