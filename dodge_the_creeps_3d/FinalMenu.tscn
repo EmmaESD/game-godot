@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://FinalMenu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/AldotheApache.ttf" type="DynamicFontData" id=2]
@@ -13,20 +13,58 @@ size = 78
 extra_spacing_bottom = 26
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.101961, 0.443137, 0.12549, 1 )
+border_width_left = 1
+border_width_bottom = 5
+border_color = Color( 0.129412, 0.533333, 0.156863, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 10.0
+expand_margin_right = 11.0
+expand_margin_top = 18.0
+expand_margin_bottom = 12.0
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_size = 4
+shadow_offset = Vector2( 2, 2 )
+
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.129412, 0.533333, 0.156863, 1 )
+border_width_left = 1
 border_width_bottom = 5
 border_color = Color( 0.0980392, 0.435294, 0.168627, 1 )
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
 shadow_size = 4
 shadow_offset = Vector2( 2, 2 )
 anti_aliasing_size = 0.01
 
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.129412, 0.533333, 0.156863, 1 )
+border_width_left = 1
+border_width_bottom = 5
+border_color = Color( 0.0980392, 0.435294, 0.168627, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 10.0
+expand_margin_right = 11.0
+expand_margin_top = 16.0
+expand_margin_bottom = 9.0
+
 [sub_resource type="Theme" id=6]
+Button/styles/hover = SubResource( 9 )
 Button/styles/normal = SubResource( 5 )
+Button/styles/pressed = SubResource( 10 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 30
@@ -41,6 +79,10 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+expand_margin_left = 44.0
+expand_margin_right = 44.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
 shadow_color = Color( 0, 0, 0, 1 )
 shadow_size = 4
 shadow_offset = Vector2( 2, 2 )
@@ -65,9 +107,9 @@ margin_right = 1.0
 
 [node name="Column" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 38.0
-margin_top = 102.0
+margin_top = 86.0
 margin_right = 681.0
-margin_bottom = 437.0
+margin_bottom = 453.0
 
 [node name="Title" type="Label" parent="CenterContainer/Column"]
 margin_right = 643.0
@@ -91,22 +133,32 @@ align = 1
 valign = 1
 
 [node name="Row" type="VBoxContainer" parent="CenterContainer/Column"]
+anchor_right = 0.015
+anchor_bottom = 0.122
 margin_top = 271.0
 margin_right = 643.0
-margin_bottom = 335.0
+margin_bottom = 367.0
+size_flags_horizontal = 5
+custom_constants/separation = 36
 alignment = 1
 
 [node name="TryAgain" type="Button" parent="CenterContainer/Column/Row"]
-margin_right = 643.0
-margin_bottom = 31.0
+margin_left = 268.0
+margin_top = 22.0
+margin_right = 384.0
+margin_bottom = 53.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
 theme = SubResource( 6 )
 custom_fonts/font = SubResource( 3 )
 text = "Try Again"
 
 [node name="Exit" type="Button" parent="CenterContainer/Column/Row"]
-margin_top = 35.0
-margin_right = 643.0
-margin_bottom = 64.0
+margin_left = 302.0
+margin_top = 89.0
+margin_right = 350.0
+margin_bottom = 118.0
+size_flags_horizontal = 4
 theme = SubResource( 8 )
 custom_fonts/font = SubResource( 4 )
 text = "Exit"
