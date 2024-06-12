@@ -1,6 +1,8 @@
 extends Node
 
 export(PackedScene) var mob_scene
+export(PackedScene) var mob_kat_scene
+export(PackedScene) var mob_spider_scene
 
 func _ready():
 	randomize()
@@ -17,6 +19,8 @@ func _unhandled_input(event):
 func _on_MobTimer_timeout():
 	# Create a Mob instance and add it to the scene.
 	var mob = mob_scene.instance()
+	var kat = mob_kat_scene.instance()
+	var spider = mob_spider_scene.instance()
 	
 	# Choose a random location on Path2D.
 	var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
@@ -28,6 +32,16 @@ func _on_MobTimer_timeout():
 	# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
 	mob.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
 	mob.initialize(mob_spawn_location.translation, player_position)
+	
+	add_child(kat)
+	# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
+	kat.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+	kat.initialize(mob_spawn_location.translation, player_position)
+	
+	add_child(spider)
+	# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
+	spider.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+	spider.initialize(mob_spawn_location.translation, player_position)
 	
 onready var final_menu : = $FinalMenu
 onready var player : = $Player

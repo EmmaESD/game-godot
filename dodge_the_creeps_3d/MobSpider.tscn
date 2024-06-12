@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Mob.gd" type="Script" id=1]
-[ext_resource path="res://art/mob.glb" type="PackedScene" id=2]
+[ext_resource path="res://art/mob-spider.glb" type="PackedScene" id=1]
+[ext_resource path="res://MobSpider.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.679112, 0.544173, 1.10029 )
+extents = Vector3( 1.63605, 0.570941, 1.52443 )
 
 [sub_resource type="Animation" id=2]
 length = 1.2
@@ -34,27 +34,24 @@ tracks/1/keys = {
 "values": [ Vector3( -5.0326, 0, 0 ), Vector3( 10, 0, 0 ), Vector3( -10, 0, 0 ) ]
 }
 
-[node name="Mob" type="KinematicBody" groups=["mob"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0114588, 0 )
+[node name="MobSpider" type="KinematicBody" groups=["spider"]]
 collision_layer = 2
-collision_mask = 2147483652
-script = ExtResource( 1 )
+collision_mask = 4
+script = ExtResource( 2 )
 
 [node name="Pivot" type="Spatial" parent="."]
 
-[node name="Character" parent="Pivot" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 0.987214, 0.1594, 0, -0.1594, 0.987214, 0, 0.348069, 0 )
+[node name="Character" parent="Pivot" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.212573, 0, 0.522231 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52793, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23566, 0.665642, 0.266495 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062134, 0.331645 )
-aabb = AABB( -1.19986, 0.251327, -1.57098, 2.41047, 1.09305, 3.17223 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.314279, -0.116434, 0.185926 )
+aabb = AABB( -1.403, 0.251327, -1.45778, 2.81676, 1.09305, 2.94583 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "float"
 anims/float = SubResource( 2 )
-
-[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
