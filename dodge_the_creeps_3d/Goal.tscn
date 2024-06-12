@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/flag_teamRed.gltf.glb" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.78467, 2.83983, 3.26389 )
+
+[node name="Goal" type="Area"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="flag_teamRedgltf" parent="." instance=ExtResource( 1 )]
