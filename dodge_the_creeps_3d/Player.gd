@@ -50,11 +50,8 @@ func _physics_process(delta):
 				velocity.y = bounce_impulse
 	# This makes the character follow a nice arc when jumping
 	$Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
-func _ready():
-	# Connexion du signal de collision
-	$Area.connect("body_entered", self, "_on_Player_body_entered")
 func die():
 	emit_signal("hit")
 	queue_free()
-func _on_Player_body_entered(_body):
+func _on_MobDetector_body_entered(_body):
 	die()
