@@ -1,17 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=3]
 [ext_resource path="res://default_env.tres" type="Environment" id=4]
+[ext_resource path="res://Level 1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ScoreLabel.gd" type="Script" id=6]
 [ext_resource path="res://ui_theme.tres" type="Theme" id=7]
-
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 30, 1, 30 )
-
-[sub_resource type="CubeMesh" id=2]
-size = Vector3( 60, 2, 60 )
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -28,62 +23,43 @@ _data = {
 script = ExtResource( 1 )
 mob_scene = ExtResource( 3 )
 
-[node name="Ground" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape" type="CollisionShape" parent="Ground"]
-shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Ground"]
-mesh = SubResource( 2 )
-
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.5, -0.777049, 0.382355, 0, 0.441506, 0.897258, -0.866025, -0.448629, 0.220753, 0, 12.5592, 14.7757 )
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-
-[node name="CameraPivot" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.183514, 0, 0 )
-
-[node name="Camera" type="Camera" parent="CameraPivot"]
-transform = Transform( 1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 9.53674e-07, 19 )
-projection = 1
-fov = 48.6
-size = 80.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.7708, 0, 32.13 )
 
 [node name="Cylinders" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Cylinders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.218, 2.781, -46.883 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="Cylinders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.845, 2.022, -47.849 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Cylinders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 16 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.16, 2.417, 46.685 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="Cylinders"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 16 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.071, -0.285, 47.459 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="SpawnPath" type="Path" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 curve = SubResource( 5 )
 
 [node name="SpawnLocation" type="PathFollow" parent="SpawnPath"]
-transform = Transform( -0.491811, 0, -0.870701, 0, 1, 0, 0.870701, 0, -0.491811, -12.9746, 0, -14.9397 )
-offset = 26.9729
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 5.70809, 0, -15 )
+offset = 8.29177
 rotation_mode = 1
 cubic_interp = false
 loop = false
@@ -113,7 +89,6 @@ __meta__ = {
 }
 
 [node name="Retry" type="ColorRect" parent="UserInterface"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.447059 )
@@ -134,6 +109,8 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
+
+[node name="Level 1" parent="." instance=ExtResource( 5 )]
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]

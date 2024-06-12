@@ -10,10 +10,9 @@ export var max_speed = 18
 
 var velocity = Vector3.ZERO
 
-
 func _physics_process(_delta):
-	move_and_slide(velocity)
-
+	# Capture the return value of move_and_slide to avoid the warning
+	var _unused = move_and_slide(velocity)
 
 func initialize(start_position, player_position):
 	translation = start_position
@@ -28,11 +27,9 @@ func initialize(start_position, player_position):
 
 	$AnimationPlayer.playback_speed = random_speed / min_speed
 
-
 func squash():
 	emit_signal("squashed")
 	queue_free()
-
 
 func _on_VisibilityNotifier_screen_exited():
 	queue_free()
