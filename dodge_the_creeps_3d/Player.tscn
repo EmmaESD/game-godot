@@ -65,11 +65,4 @@ shape = SubResource( 2 )
 autoplay = "float"
 anims/float = SubResource( 3 )
 
-[node name="target" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.794465, 0 )
-
-[node name="Camera" type="Camera" parent="target"]
-transform = Transform( 1, 0, 0, 0, 0.948578, 0.316543, 0, -0.316543, 0.948578, 0, 3.79728, 9.74007 )
-script = ExtResource( 3 )
-
 [connection signal="body_entered" from="MobDetector" to="." method="_on_MobDetector_body_entered"]
