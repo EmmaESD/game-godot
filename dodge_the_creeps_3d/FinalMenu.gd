@@ -9,6 +9,7 @@ func initialize(total_play_time :float) -> void:
 	var seconds : String = str(int(fmod(total_play_time, 60.0)))
 	var time_text = "Total time : %s m %s s" % [minutes, seconds]
 	time.text = time_text
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	show()
 
