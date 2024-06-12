@@ -127,6 +127,7 @@ __meta__ = {
 environment = ExtResource( 4 )
 
 [node name="Level1" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245171, 1.90735e-06, 0.0941353 )
 
 [node name="SpeedBooster" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7952, -0.0943699, 24.4997 )
