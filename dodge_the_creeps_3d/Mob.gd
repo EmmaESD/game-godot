@@ -10,9 +10,18 @@ export var max_speed = 18
 
 var velocity = Vector3.ZERO
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	# Capture the return value of move_and_slide to avoid the warning
 	var _unused = move_and_slide(velocity)
+
+	# Check for collisions
+	for i in range(get_slide_count()):
+		var collision = get_slide_collision(i)
+		if collision.collider.is_in_group("level1"):  # Assure that your walls are in the "wall" group
+			rotate_y(deg2rad(90))  # Rotate by 90 degrees
+			velocity = Vector3.FORWARD * velocity.length()  # Maintain current speed
+			velocity = velocity.rotated(Vector3.UP, rotation.y)
+			break  # Exit loop after handling collision
 
 func initialize(start_position, player_position):
 	translation = start_position
