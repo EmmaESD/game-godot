@@ -7,11 +7,16 @@ Squash the Creeps est un jeu démo gratuit et open-source pour le tutoriel "Votr
 Dans Squash the Creeps, votre objectif est d'écraser le plus de creeps possible tout en évitant les obstacles. Utilisez les contrôles suivants pour naviguer et écraser les creeps :
 
 Avancer : Z ou Flèche Haut
+
 Reculer : S ou Flèche Bas
+
 Déplacer à gauche : Q ou Flèche Gauche
+
 Déplacer à droite : D ou Flèche Droite
+
 Sauter : Espace
-Installation
+
+## Installation
 Pour jouer à Écrase les Creeps, suivez ces étapes :
 
 Téléchargez et installez la version 3.5 de Godot Engine.
