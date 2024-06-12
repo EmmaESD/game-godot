@@ -2,10 +2,15 @@ extends Node
 
 export(PackedScene) var mob_scene
 
+signal playerDead
 
 func _ready():
 	randomize()
 	$UserInterface/Retry.hide()
+	
+	var speed_booster = get_node("SpeedBooster")
+	speed_booster.connect("boosted", $UserInterface/BoostLabel, "_on_SpeedBooster_boosted")
+	self.connect("playerDead", $SpeedBooster, "_on_Player_dead")
 
 
 func _unhandled_input(event):
@@ -30,5 +35,6 @@ func _on_MobTimer_timeout():
 
 
 func _on_Player_hit():
+	emit_signal("playerDead")
 	$MobTimer.stop()
 	$UserInterface/Retry.show()
