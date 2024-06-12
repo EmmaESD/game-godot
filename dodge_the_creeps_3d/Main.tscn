@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=3]
 [ext_resource path="res://default_env.tres" type="Environment" id=4]
-[ext_resource path="res://Level 1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://FinalMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ScoreLabel.gd" type="Script" id=6]
 [ext_resource path="res://ui_theme.tres" type="Theme" id=7]
 [ext_resource path="res://SpeedBooster.tscn" type="PackedScene" id=8]
 [ext_resource path="res://BoostLabel.gd" type="Script" id=9]
 [ext_resource path="res://PauseHandler.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level1.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -125,7 +126,8 @@ __meta__ = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
 
-[node name="Level 1" parent="." instance=ExtResource( 5 )]
+[node name="Level1" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245171, 1.90735e-06, 0.0941353 )
 
 [node name="SpeedBooster" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7952, -0.0943699, 24.4997 )
@@ -143,5 +145,8 @@ visible = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3953, -0.0943696, -34.6729 )
 visible = false
 
+[node name="FinalMenu" parent="." instance=ExtResource( 5 )]
+
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="retried" from="FinalMenu" to="." method="_on_FinalMenu_retried"]
