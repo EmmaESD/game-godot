@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://BoostLabel.gd" type="Script" id=9]
 [ext_resource path="res://PauseHandler.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://MobSpider.tscn" type="PackedScene" id=12]
+[ext_resource path="res://MobKat.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -26,6 +28,8 @@ _data = {
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 mob_scene = ExtResource( 3 )
+mob_kat_scene = ExtResource( 13 )
+mob_spider_scene = ExtResource( 12 )
 
 [node name="PauseHandler" parent="." instance=ExtResource( 10 )]
 

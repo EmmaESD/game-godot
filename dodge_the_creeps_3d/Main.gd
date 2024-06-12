@@ -1,6 +1,8 @@
 extends Node
 
 export(PackedScene) var mob_scene
+export(PackedScene) var mob_kat_scene
+export(PackedScene) var mob_spider_scene
 
 signal playerDead
 signal finalScore(score_number)
@@ -36,6 +38,8 @@ func _unhandled_input(event):
 
 func _on_MobTimer_timeout():
 	var mob = mob_scene.instance()
+	var kat = mob_kat_scene.instance()
+	var spider = mob_spider_scene.instance()
 	var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
 	mob_spawn_location.unit_offset = randf()
 	
@@ -46,6 +50,16 @@ func _on_MobTimer_timeout():
 		mob.connect("squashed", self, "_on_Mob_squashed")
 		mob.initialize(mob_spawn_location.translation, player_position)
 
+		add_child(kat)
+		# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
+		kat.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+		kat.initialize(mob_spawn_location.translation, player_position)
+	
+		add_child(spider)
+		# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
+		spider.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+		spider.initialize(mob_spawn_location.translation, player_position)
+	
 func _on_Mob_squashed():
 	score += 1
 
