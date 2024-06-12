@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -26,6 +26,8 @@ _data = {
 
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 12 )
+
+[sub_resource type="Theme" id=7]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -147,6 +149,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3953, -0.0943696, -34.6729 
 visible = false
 
 [node name="FinalMenu" parent="." instance=ExtResource( 5 )]
+theme = SubResource( 7 )
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
