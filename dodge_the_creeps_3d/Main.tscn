@@ -72,21 +72,26 @@ autostart = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScoreLabel" type="Label" parent="UserInterface"]
 margin_left = 20.0226
 margin_top = 16.0181
 margin_right = 126.023
 margin_bottom = 71.0181
+rect_pivot_offset = Vector2( 40.9774, 27.9819 )
 custom_colors/font_color = Color( 0.2, 0.184314, 0.215686, 1 )
 text = "Score: 0"
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="BoostLabel" type="Label" parent="UserInterface"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -165.0
+margin_top = 9.0
+margin_right = -85.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 8 )
 
 [node name="Retry" type="ColorRect" parent="UserInterface"]
 anchor_right = 1.0

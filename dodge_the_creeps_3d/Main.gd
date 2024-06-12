@@ -1,6 +1,7 @@
 extends Node
 
 export(PackedScene) var mob_scene
+signal playerDead
 
 func _ready():
 	randomize()
@@ -27,5 +28,6 @@ func _on_MobTimer_timeout():
 	mob.initialize(mob_spawn_location.translation, player_position)
 
 func _on_Player_hit():
+	emit_signal("playerDead")
 	$MobTimer.stop()
 	$UserInterface/Retry.show()
