@@ -3,6 +3,8 @@ extends Node
 export(PackedScene) var mob_scene
 
 signal playerDead
+signal finalScore(score_number)
+var score = 0
 
 func _ready():
 	randomize()
@@ -31,10 +33,16 @@ func _on_MobTimer_timeout():
 	add_child(mob)
 	# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
 	# Capture and ignore the return value of the connect() function
-	var _unused4 = mob.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+	mob.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+	mob.connect("squashed", self, "_on_Mob_squashed")
 	mob.initialize(mob_spawn_location.translation, player_position)
+	
+func _on_Mob_squashed():
+	score += 1
 
 func _on_Player_hit():
 	emit_signal("playerDead")
 	$MobTimer.stop()
 	$UserInterface/Retry.show()
+	self.connect("finalScore", $PauseHandler/UserInterface/Pause/BestScore, "_on_final_score")
+	emit_signal("finalScore", score)

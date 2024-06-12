@@ -7,7 +7,7 @@ var boost_active = false
 var boosted_player = null
 var player_dead = false
 
-func _on_Player_dead ():
+func _on_Player_dead():
 	player_dead = true
 
 func _ready():
