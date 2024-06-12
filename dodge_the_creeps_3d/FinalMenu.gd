@@ -2,16 +2,19 @@ extends Control
 
 signal retried
 
-onready var time : = $CenterContainer/Column/Time 
+# Référence au Label pour afficher le temps final
+onready var final_time_label: Label = $CenterContainer/Column/Time
 
-func initialize(total_play_time :float) -> void:
-	var minutes : String = str(int(total_play_time / 60.0))
-	var seconds : String = str(int(fmod(total_play_time, 60.0)))
-	var time_text = "Total time : %s m %s s" % [minutes, seconds]
-	time.text = time_text
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+# Fonction appelée au démarrage
+func _ready():
+	# Convertit le temps final en minutes et secondes
+	var final_time = Global.final_time
+	var minutes = final_time / 60
+	var seconds = final_time % 60
 	
-	show()
+	# Formate le texte à afficher
+	final_time_label.text = "Temps final: " + str(minutes).pad_zeros(2) + ":" + str(seconds).pad_zeros(2)
+
 
 func _on_TryAgain_pressed():
 	emit_signal("retried")
