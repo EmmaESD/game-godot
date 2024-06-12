@@ -5,8 +5,12 @@ export(PackedScene) var mob_scene
 
 func _ready():
 	randomize()
+	var Level1 = get_node("Level1")
 	$UserInterface/Retry.hide()
 	$FinalMenu.hide()
+	$Level1.connect("level_completed", self, "_on_Goal_body_entered")
+	
+	
 
 
 func _unhandled_input(event):
@@ -41,8 +45,14 @@ func _on_Player_hit():
 	$MobTimer.stop()
 	$UserInterface/Retry.show()
 
+func level_completed():
+	$MobTimer.stop()
+	$FinalMenu.show()
+	
 
-func _on_Level_1_level_comppleted():
+
+func _on_Level_1_level_completed():
+	print('connect')
 	var total_play_time = play_time
 	player.queue_free()
 	final_menu.initialize(total_play_time)

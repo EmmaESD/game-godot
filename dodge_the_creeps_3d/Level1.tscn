@@ -15,7 +15,7 @@ size = Vector2( 100, 100 )
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 50, 50, 1 )
 
-[node name="Level 1" type="Spatial"]
+[node name="Level1" type="Spatial"]
 script = ExtResource( 4 )
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -48,4 +48,5 @@ shape = SubResource( 8 )
 [node name="Goal" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0079, 1.09426, -35.3403 )
 
+[connection signal="level_completed" from="." to="." method="_on_Level_1_level_completed"]
 [connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]
