@@ -7,7 +7,7 @@ var boost_active = false
 var boosted_player = null
 var player_dead = false
 
-func _on_Player_dead ():
+func _on_Player_dead():
 	player_dead = true
 
 func _ready():
@@ -24,7 +24,7 @@ func _on_SpeedBooster_body_entered(body):
 
 func _on_Timer_timeout():
 	if !player_dead:
-		if boosted_player:
+		if is_instance_valid(boosted_player):
 			boosted_player.speed -= speed_boost
 			boost_active = false
 			boosted_player = null

@@ -1,20 +1,24 @@
+# FinalMenu.gd
 extends Control
 
 signal retried
 
-onready var time : = $CenterContainer/Column/Time 
+# Reference to the Label to display the final time
+onready var final_time_label: Label = $CenterContainer/Column/Time
 
-func initialize(total_play_time :float) -> void:
-	var minutes : String = str(int(total_play_time / 60.0))
-	var seconds : String = str(int(fmod(total_play_time, 60.0)))
-	var time_text = "Total time : %s m %s s" % [minutes, seconds]
-	time.text = time_text
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
-	show()
+# Function called at startup
 
+# Function called when the Try Again button is pressed
 func _on_TryAgain_pressed():
 	emit_signal("retried")
 
+# Function called when the Exit button is pressed
 func _on_Exit_pressed():
 	get_tree().quit()
+
+# Ensure the initialize function is defined
+func initialize():
+	var final_time = Global.final_time
+	var minutes = int(final_time / 60)
+	var seconds = int(final_time % 60)
+	final_time_label.text = "Temps final: " + str(minutes).pad_zeros(2) + ":" + str(seconds).pad_zeros(2)
