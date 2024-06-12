@@ -42,6 +42,7 @@ tracks/1/keys = {
 [node name="Player" type="KinematicBody"]
 collision_mask = 2147483654
 script = ExtResource( 1 )
+bounce_impulse = 20
 
 [node name="Pivot" type="Spatial" parent="."]
 
