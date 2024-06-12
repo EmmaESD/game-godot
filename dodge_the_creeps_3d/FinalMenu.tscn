@@ -12,10 +12,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Column" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 301.0
-margin_top = 230.0
-margin_right = 419.0
-margin_bottom = 310.0
+margin_left = 453.0
+margin_top = 260.0
+margin_right = 571.0
+margin_bottom = 340.0
 
 [node name="Title" type="Label" parent="CenterContainer/Column"]
 margin_right = 118.0
