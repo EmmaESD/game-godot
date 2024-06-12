@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://FinalMenu.gd" type="Script" id=1]
+[ext_resource path="res://fonts/AldotheApache.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 180
+extra_spacing_bottom = 22
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+extra_spacing_bottom = 26
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+extra_spacing_bottom = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 2 )
 
 [node name="FinalMenu" type="Control"]
 anchor_right = 1.0
@@ -12,39 +32,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Column" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 301.0
-margin_top = 230.0
-margin_right = 419.0
-margin_bottom = 310.0
+margin_left = 38.0
+margin_top = 113.0
+margin_right = 681.0
+margin_bottom = 427.0
 
 [node name="Title" type="Label" parent="CenterContainer/Column"]
-margin_right = 118.0
-margin_bottom = 14.0
+margin_right = 643.0
+margin_bottom = 172.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 1 )
 text = "You win !"
 align = 1
 valign = 1
 
 [node name="Time" type="Label" parent="CenterContainer/Column"]
-margin_top = 18.0
-margin_right = 118.0
-margin_bottom = 32.0
+margin_top = 176.0
+margin_right = 643.0
+margin_bottom = 243.0
+custom_fonts/font = SubResource( 2 )
 text = "Your time : 1m25s"
+align = 1
 valign = 1
 
 [node name="Row" type="VBoxContainer" parent="CenterContainer/Column"]
-margin_top = 36.0
-margin_right = 118.0
-margin_bottom = 80.0
+margin_top = 247.0
+margin_right = 643.0
+margin_bottom = 314.0
 
 [node name="TryAgain" type="Button" parent="CenterContainer/Column/Row"]
-margin_right = 118.0
-margin_bottom = 20.0
+margin_right = 643.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
 text = "Try Again"
 
 [node name="Exit" type="Button" parent="CenterContainer/Column/Row"]
-margin_top = 24.0
-margin_right = 118.0
-margin_bottom = 44.0
+margin_top = 36.0
+margin_right = 643.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 4 )
 text = "Exit"
 
 [connection signal="pressed" from="CenterContainer/Column/Row/TryAgain" to="." method="_on_TryAgain_pressed"]
