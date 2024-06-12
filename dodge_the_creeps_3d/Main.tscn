@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://ui_theme.tres" type="Theme" id=7]
 [ext_resource path="res://SpeedBooster.tscn" type="PackedScene" id=8]
 [ext_resource path="res://BoostLabel.gd" type="Script" id=9]
+[ext_resource path="res://PauseHandler.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -24,6 +25,8 @@ _data = {
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 mob_scene = ExtResource( 3 )
+
+[node name="PauseHandler" parent="." instance=ExtResource( 10 )]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.5, -0.777049, 0.382355, 0, 0.441506, 0.897258, -0.866025, -0.448629, 0.220753, 0, 12.5592, 14.7757 )
@@ -96,6 +99,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 script = ExtResource( 9 )
 
 [node name="Retry" type="ColorRect" parent="UserInterface"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
