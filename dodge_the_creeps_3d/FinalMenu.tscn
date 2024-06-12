@@ -24,7 +24,7 @@ text = "You win !"
 align = 1
 valign = 1
 
-[node name="Timer" type="Label" parent="CenterContainer/Column"]
+[node name="Time" type="Label" parent="CenterContainer/Column"]
 margin_top = 18.0
 margin_right = 118.0
 margin_bottom = 32.0

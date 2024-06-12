@@ -1,7 +1,7 @@
 extends Spatial
 
-signal level_comppleted()
+signal level_completed()
 
 func _on_Goal_body_entered(body):
-	if body is Player:
+	if body.name == "Player":  # assuming the node name is "Player"
 		emit_signal('level_completed')

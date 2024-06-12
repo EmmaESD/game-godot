@@ -6,6 +6,8 @@
 extents = Vector3( 2.78467, 2.83983, 3.26389 )
 
 [node name="Goal" type="Area"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )

@@ -127,4 +127,4 @@ environment = ExtResource( 4 )
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
-[connection signal="level_comppleted" from="Level 1" to="." method="_on_Level_1_level_comppleted"]
+[connection signal="retried" from="FinalMenu" to="." method="_on_FinalMenu_retried"]

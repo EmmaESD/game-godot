@@ -6,6 +6,7 @@ export(PackedScene) var mob_scene
 func _ready():
 	randomize()
 	$UserInterface/Retry.hide()
+	$FinalMenu.hide()
 
 
 func _unhandled_input(event):
@@ -45,3 +46,7 @@ func _on_Level_1_level_comppleted():
 	var total_play_time = play_time
 	player.queue_free()
 	final_menu.initialize(total_play_time)
+
+
+func _on_FinalMenu_retried():
+	get_tree().reload_current_scene()
