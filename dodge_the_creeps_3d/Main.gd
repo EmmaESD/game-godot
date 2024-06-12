@@ -53,11 +53,13 @@ func _on_MobTimer_timeout():
 		add_child(kat)
 		# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
 		kat.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+		kat.connect("squashed", self, "_on_Mob_squashed")
 		kat.initialize(mob_spawn_location.translation, player_position)
 	
 		add_child(spider)
 		# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
 		spider.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+		spider.connect("squashed", self, "_on_Mob_squashed")
 		spider.initialize(mob_spawn_location.translation, player_position)
 	
 func _on_Mob_squashed():

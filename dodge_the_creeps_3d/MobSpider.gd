@@ -30,7 +30,7 @@ func _physics_process(delta):
 
 	if collision_info:
 		for i in range(get_slide_count()):
-			var collision = get_slide_collision(i)
+			var _collision = get_slide_collision(i)
 
 			# Start the wait and turn coroutine
 			yield(wait_and_turn(), "completed")
