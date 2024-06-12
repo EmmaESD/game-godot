@@ -9,7 +9,7 @@ extra_spacing_bottom = 22
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 48
+size = 78
 extra_spacing_bottom = 26
 font_data = ExtResource( 2 )
 
@@ -33,9 +33,9 @@ anchor_bottom = 1.0
 
 [node name="Column" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 38.0
-margin_top = 113.0
+margin_top = 101.0
 margin_right = 681.0
-margin_bottom = 427.0
+margin_bottom = 439.0
 
 [node name="Title" type="Label" parent="CenterContainer/Column"]
 margin_right = 643.0
@@ -52,16 +52,16 @@ valign = 1
 [node name="Time" type="Label" parent="CenterContainer/Column"]
 margin_top = 176.0
 margin_right = 643.0
-margin_bottom = 243.0
+margin_bottom = 267.0
 custom_fonts/font = SubResource( 2 )
 text = "Your time : 1m25s"
 align = 1
 valign = 1
 
 [node name="Row" type="VBoxContainer" parent="CenterContainer/Column"]
-margin_top = 247.0
+margin_top = 271.0
 margin_right = 643.0
-margin_bottom = 314.0
+margin_bottom = 338.0
 
 [node name="TryAgain" type="Button" parent="CenterContainer/Column/Row"]
 margin_right = 643.0
