@@ -45,7 +45,7 @@ func _on_Player_hit():
 	$MobTimer.stop()
 	$UserInterface/Retry.show()
 
-func level_completed():
+func _on_Goal_body_entered():
 	$MobTimer.stop()
 	$FinalMenu.show()
 	
