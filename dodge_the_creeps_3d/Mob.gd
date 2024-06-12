@@ -9,18 +9,31 @@ export var min_speed = 10
 export var max_speed = 18
 
 var velocity = Vector3.ZERO
+var change_direction_timer = 0
+var detection_radius = 10.0
+var player = null
+
+func _ready():
+	change_direction_timer = rand_range(2, 5)  # Initial direction change timer
+	# Find player in the group "player"
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
 
 func _physics_process(delta):
-	# Capture the return value of move_and_slide to avoid the warning
-	var _unused = move_and_slide(velocity)
+	change_direction_timer -= delta
+	if change_direction_timer <= 0:
+		change_direction_timer = rand_range(2, 5)
+		random_rotate()
 
-	# Check for collisions
-	for i in range(get_slide_count()):
-		var collision = get_slide_collision(i)
-		if collision.collider.is_in_group("level1"):  # Assure that your walls are in the "wall" group
-			rotate_y(deg2rad(90))  # Rotate by 90 degrees
-			velocity = Vector3.FORWARD * velocity.length()  # Maintain current speed
-			velocity = velocity.rotated(Vector3.UP, rotation.y)
+	var collision_info = move_and_slide(velocity)
+
+	if collision_info:
+		for i in range(get_slide_count()):
+			var collision = get_slide_collision(i)
+
+			# Start the wait and turn coroutine
+			yield(wait_and_turn(), "completed")
 			break  # Exit loop after handling collision
 
 func initialize(start_position, player_position):
@@ -29,9 +42,7 @@ func initialize(start_position, player_position):
 	rotate_y(rand_range(-PI / 4, PI / 4))
 
 	var random_speed = rand_range(min_speed, max_speed)
-	# We calculate a forward velocity first, which represents the speed.
 	velocity = Vector3.FORWARD * random_speed
-	# We then rotate the vector based on the mob's Y rotation to move in the direction it's looking.
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 
 	$AnimationPlayer.playback_speed = random_speed / min_speed
@@ -42,3 +53,24 @@ func squash():
 
 func _on_VisibilityNotifier_screen_exited():
 	queue_free()
+
+func random_rotate():
+	var angle = rand_range(deg2rad(90), deg2rad(270))
+	rotate_y(angle)
+	velocity = Vector3.FORWARD * velocity.length()
+	velocity = velocity.rotated(Vector3.UP, rotation.y)
+
+# Coroutine to wait for 1 second before turning
+func wait_and_turn():
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 1.0
+	timer.one_shot = true
+	timer.start()
+	yield(timer, "timeout")
+	rotate_y(deg2rad(180))  # Rotate by 180 degrees
+	velocity = Vector3.FORWARD * velocity.length()
+	velocity = velocity.rotated(Vector3.UP, rotation.y)
+	timer.queue_free()
+
+
