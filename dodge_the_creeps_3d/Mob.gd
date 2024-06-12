@@ -67,10 +67,10 @@ func wait_and_turn():
 	timer.wait_time = 1.0
 	timer.one_shot = true
 	timer.start()
-	yield(timer, "timeout")
-	rotate_y(deg2rad(180))  # Rotate by 180 degrees
+	rotate_y(rand_range(deg2rad(90), deg2rad(270)))  # Rotate by 180 degrees
 	velocity = Vector3.FORWARD * velocity.length()
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
+	yield(timer, "timeout")
 	timer.queue_free()
 
 
