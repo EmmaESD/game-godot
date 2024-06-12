@@ -4,7 +4,7 @@ func _ready():
 	get_tree().paused = false
 
 func _unhandled_input(event):
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("ui_cancel"):
 		if get_tree().paused == false:
 			$UserInterface/Pause.show()
 			get_tree().paused = true

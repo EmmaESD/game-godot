@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://art/player.glb" type="PackedScene" id=2]
@@ -10,6 +10,21 @@ radius = 0.792278
 [sub_resource type="CylinderShape" id=2]
 height = 0.1438
 radius = 0.907607
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer:root_node")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ NodePath("..") ]
+}
 
 [sub_resource type="Animation" id=3]
 length = 1.2
@@ -33,7 +48,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1, 0.46, 1.18 ),
+"times": PoolRealArray( 0.1, 0.5, 1.18 ),
 "transitions": PoolRealArray( 0.482968, 0.535887, 1 ),
 "update": 0,
 "values": [ Vector3( -5.0326, 0, 0 ), Vector3( 10, 0, 0 ), Vector3( -10, 0, 0 ) ]
@@ -47,7 +62,7 @@ bounce_impulse = 20
 [node name="Pivot" type="Spatial" parent="."]
 
 [node name="Character" parent="Pivot" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 0.999711, 0.0240511, 0, -0.0240511, 0.999711, 0, 0.335971, 0 )
+transform = Transform( 1, 0, 0, 0, 0.987214, 0.1594, 0, -0.1594, 0.987214, 0, 0.348069, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.771765, 0 )
@@ -64,6 +79,7 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "float"
+anims/RESET = SubResource( 4 )
 anims/float = SubResource( 3 )
 
 [node name="target" type="Spatial" parent="."]

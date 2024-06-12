@@ -38,4 +38,3 @@ func _on_Player_hit():
 	emit_signal("playerDead")
 	$MobTimer.stop()
 	$UserInterface/Retry.show()
-
