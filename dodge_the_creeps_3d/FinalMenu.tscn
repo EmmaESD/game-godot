@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://FinalMenu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/AldotheApache.ttf" type="DynamicFontData" id=2]
@@ -22,9 +22,9 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
-expand_margin_left = 10.0
-expand_margin_right = 11.0
-expand_margin_top = 18.0
+expand_margin_left = 12.0
+expand_margin_right = 12.0
+expand_margin_top = 16.0
 expand_margin_bottom = 12.0
 shadow_color = Color( 0, 0, 0, 1 )
 shadow_size = 4
@@ -71,6 +71,23 @@ size = 30
 extra_spacing_bottom = 1
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.576471, 0.0980392, 0.0980392, 1 )
+border_width_left = 1
+border_width_bottom = 4
+border_color = Color( 0.74902, 0.117647, 0.117647, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 47.0
+expand_margin_right = 47.0
+expand_margin_top = 15.0
+expand_margin_bottom = 12.0
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_size = 4
+shadow_offset = Vector2( 2, 2 )
+
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.74902, 0.117647, 0.117647, 1 )
 border_width_bottom = 4
@@ -87,8 +104,25 @@ shadow_color = Color( 0, 0, 0, 1 )
 shadow_size = 4
 shadow_offset = Vector2( 2, 2 )
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.74902, 0.117647, 0.117647, 1 )
+border_width_bottom = 4
+border_color = Color( 0.576471, 0.0980392, 0.0980392, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 47.0
+expand_margin_right = 47.0
+expand_margin_top = 15.0
+expand_margin_bottom = 12.0
+shadow_size = 4
+shadow_offset = Vector2( 2, 2 )
+
 [sub_resource type="Theme" id=8]
+Button/styles/hover = SubResource( 11 )
 Button/styles/normal = SubResource( 7 )
+Button/styles/pressed = SubResource( 12 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 30
