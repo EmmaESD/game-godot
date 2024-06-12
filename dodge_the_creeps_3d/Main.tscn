@@ -98,9 +98,6 @@ autostart = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScoreLabel" type="Label" parent="UserInterface"]
 margin_left = 20.0226
@@ -138,7 +135,8 @@ __meta__ = {
 environment = ExtResource( 4 )
 
 [node name="Finish" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02185, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89595, 0.0793643, -0.120982 )
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="Finish" method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
