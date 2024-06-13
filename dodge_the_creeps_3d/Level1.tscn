@@ -77,4 +77,5 @@ shape = SubResource( 8 )
 [node name="Goal" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.00888592, -0.000823653, -1.99998, 2.83817e-05, 2, -0.000823534, 1.99998, -2.4706e-05, 0.00888593, 55.7254, -0.946813, -35.4241 )
 
+[connection signal="level_completed" from="." to="." method="_on_Level1_level_completed"]
 [connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]

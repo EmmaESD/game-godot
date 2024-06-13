@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://ScoreLabel.gd" type="Script" id=6]
 [ext_resource path="res://ui_theme.tres" type="Theme" id=7]
 [ext_resource path="res://SpeedBooster.tscn" type="PackedScene" id=8]
-[ext_resource path="res://BoostLabel.gd" type="Script" id=9]
 [ext_resource path="res://PauseHandler.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level1.tscn" type="PackedScene" id=11]
 
@@ -91,13 +90,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BoostLabel" type="Label" parent="UserInterface"]
-margin_left = 533.0
-margin_top = 23.0
-margin_right = 685.0
-margin_bottom = 53.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-script = ExtResource( 9 )
+[node name="TimeLabel" type="Label" parent="UserInterface"]
+margin_right = 40.0
+margin_bottom = 28.0
+
+[node name="Timer" type="Timer" parent="UserInterface/TimeLabel"]
 
 [node name="Retry" type="ColorRect" parent="UserInterface"]
 anchor_right = 1.0
@@ -147,6 +144,7 @@ visible = false
 
 [node name="FinalMenu" parent="." instance=ExtResource( 5 )]
 
+[connection signal="level_completed" from="." to="." method="_on_Main_level_completed"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="retried" from="FinalMenu" to="." method="_on_FinalMenu_retried"]
