@@ -139,19 +139,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245171, 1.90735e-06, 0.094
 
 [node name="SpeedBooster" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7952, -0.0943699, 24.4997 )
-visible = false
 
 [node name="SpeedBooster2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9259, -0.0943696, -29.2241 )
-visible = false
-
-[node name="SpeedBooster3" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.724, -0.0943696, 3.24347 )
-visible = false
 
 [node name="SpeedBooster4" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3953, -0.0943696, -34.6729 )
-visible = false
+
+[node name="SpeedBooster5" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4177, -0.0943696, 19.2227 )
 
 [node name="FinalMenu" parent="." instance=ExtResource( 5 )]
 visible = false
