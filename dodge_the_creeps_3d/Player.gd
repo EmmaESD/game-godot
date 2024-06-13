@@ -12,11 +12,18 @@ var velocity = Vector3.ZERO
 var camera
 var pivot
 var current_yaw = 0.0
+var base_speed = 14
+var boost_timer = null
 
 func _ready():
 	# Initialize camera and pivot nodes, and connect signals
 	camera = get_node("target/Camera")
 	pivot = get_node("Pivot")
+	boost_timer = Timer.new()
+	boost_timer.set_wait_time(3.0)
+	boost_timer.set_one_shot(true)
+	boost_timer.connect("timeout", self, "_on_BoostTimer_timeout")
+	add_child(boost_timer)
 	
 	if camera == null:
 		print("Error: Camera node not found")
@@ -88,3 +95,12 @@ func die():
 func _on_MobDetector_body_entered(_body):
 	# Call die function if mob is detected
 	die()
+
+func apply_speed_boost(amount):
+	base_speed = speed  # Save the current speed as base speed
+	speed += amount
+	if boost_timer.is_stopped():
+		boost_timer.start()
+
+func _on_BoostTimer_timeout():
+	speed = base_speed  # Reset to base speed
