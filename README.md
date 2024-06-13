@@ -4,7 +4,7 @@ Squash the Creeps est un jeu démo gratuit et open-source pour le tutoriel "Votr
 
 ![image](https://github.com/EmmaESD/game-godot/assets/146823946/b0d1200d-419b-4dfd-b243-8915b71e8494)
 
-![image](https://cdn.discordapp.com/attachments/1215969270253486150/1250783706965082222/image.png?ex=666c329a&is=666ae11a&hm=84fe3df8fc3167e3848d2a59cf844fcdb2040557860cb679561bfcce61199020&)
+![image](https://github.com/EmmaESD/game-godot/assets/146823946/dee665ea-4d0f-4392-827e-2d5e9aa5fe29)
 
 ![image](https://github.com/EmmaESD/game-godot/assets/146823946/4218af63-b5c5-4770-9304-d68fb4847f95)
 
