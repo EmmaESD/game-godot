@@ -25,7 +25,7 @@ Sauter : Espace
 Caméra : Pad ou Souris
 
 ## Installation
-Pour jouer à Écrase les Creeps, suivez ces étapes :
+Pour jouer à Squash the Creeps, suivez ces étapes :
 
 Téléchargez et installez la version 3.5 de Godot Engine. Clonez ou téléchargez le dépôt Squash the Creeps depuis GitHub. Ouvrez le projet dans Godot en sélectionnant le fichier project.godot.
 
