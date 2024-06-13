@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ Vector3( -5.0326, 0, 0 ), Vector3( 10, 0, 0 ), Vector3( -10, 0, 0 ) ]
 }
 
-[node name="MobSpider" type="KinematicBody" groups=["spider"]]
+[node name="MobSpider" type="KinematicBody" groups=["mob"]]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource( 2 )

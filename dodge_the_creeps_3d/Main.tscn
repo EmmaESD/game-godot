@@ -150,7 +150,6 @@ visible = false
 
 [node name="FinalMenu" parent="." instance=ExtResource( 5 )]
 
-[connection signal="level_completed" from="." to="." method="_on_Main_level_completed"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="retried" from="FinalMenu" to="." method="_on_FinalMenu_retried"]
