@@ -13,3 +13,4 @@ collision_mask = 0
 shape = SubResource( 1 )
 
 [node name="flag_teamRedgltf" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00131321, -0.0194541, -0.000758171 )

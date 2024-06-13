@@ -24,8 +24,9 @@ func _on_SpeedBooster_body_entered(body):
 
 func _on_Timer_timeout():
 	if !player_dead:
-		if boosted_player:
-			boosted_player.speed -= speed_boost
-			boost_active = false
-			boosted_player = null
-			emit_signal("boosted", "")
+		if is_instance_valid(boosted_player):
+			if boosted_player:
+				boosted_player.speed -= speed_boost
+				boost_active = false
+				boosted_player = null
+				emit_signal("boosted", "")

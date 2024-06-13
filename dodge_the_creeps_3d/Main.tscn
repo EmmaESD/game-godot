@@ -1,4 +1,7 @@
+
 [gd_scene load_steps=19 format=2]
+
+
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -8,10 +11,12 @@
 [ext_resource path="res://ScoreLabel.gd" type="Script" id=6]
 [ext_resource path="res://ui_theme.tres" type="Theme" id=7]
 [ext_resource path="res://SpeedBooster.tscn" type="PackedScene" id=8]
-[ext_resource path="res://BoostLabel.gd" type="Script" id=9]
+[ext_resource path="res://MobSpider.tscn" type="PackedScene" id=9]
 [ext_resource path="res://PauseHandler.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://fonts/AldotheApache.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://MobKat.tscn" type="PackedScene" id=12]
+
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -20,8 +25,8 @@ albedo_color = Color( 0.960784, 0.486275, 0.0313726, 1 )
 
 [sub_resource type="Curve3D" id=5]
 _data = {
-"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 14, 0, -15, 0, 0, 0, 0, 0, 0, -13, 0, -15, 0, 0, 0, 0, 0, 0, -13, 0, 16, 0, 0, 0, 0, 0, 0, 14, 0, 16, 0, 0, 0, 0, 0, 0, 14, 0, -15 ),
-"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 12.1734, 1.29969, -38.9449, 0, 0, 0, 0, 0, 0, -13.2745, -0.118992, -25.1435, 0, 0, 0, 0, 0, 0, -18.3394, -1.74532, 20.7519, 0, 0, 0, 0, 0, 0, 15.8391, -0.222244, 19.7493, 0, 0, 0, 0, 0, 0, 14, 0, -15, 0, 0, 0, 0, 0, 0, 23.5214, 3.46623, -2.32449, 0, 0, 0, 0, 0, 0, -46.9351, -27.4559, -38.3848, 0, 0, 0, 0, 0, 0, -12.3453, -18.3959, 46.3417, 0, 0, 0, 0, 0, 0, 35.3681, 6.42057, 28.3211, 0, 0, 0, 0, 0, 0, 12.1734, 1.29969, -38.9449 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
 [sub_resource type="DynamicFont" id=6]
@@ -37,6 +42,8 @@ font_data = ExtResource( 12 )
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 mob_scene = ExtResource( 3 )
+mob_kat_scene = ExtResource( 12 )
+mob_spider_scene = ExtResource( 9 )
 
 [node name="PauseHandler" parent="." instance=ExtResource( 10 )]
 
@@ -71,7 +78,6 @@ mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="SpawnPath" type="Path" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 curve = SubResource( 5 )
 
 [node name="SpawnLocation" type="PathFollow" parent="SpawnPath"]
@@ -82,7 +88,6 @@ cubic_interp = false
 loop = false
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 
 [node name="UserInterface" type="Control" parent="."]
@@ -100,13 +105,11 @@ custom_fonts/font = SubResource( 6 )
 text = "Score: 0"
 script = ExtResource( 6 )
 
-[node name="BoostLabel" type="Label" parent="UserInterface"]
-margin_left = 533.0
-margin_top = 23.0
-margin_right = 685.0
-margin_bottom = 53.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-script = ExtResource( 9 )
+[node name="TimeLabel" type="Label" parent="UserInterface"]
+margin_right = 40.0
+margin_bottom = 28.0
+
+[node name="Timer" type="Timer" parent="UserInterface/TimeLabel"]
 
 [node name="Retry" type="ColorRect" parent="UserInterface"]
 anchor_right = 1.0
@@ -136,6 +139,7 @@ __meta__ = {
 environment = ExtResource( 4 )
 
 [node name="Level1" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245171, 1.90735e-06, 0.0941353 )
 
 [node name="SpeedBooster" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7952, -0.0943699, 24.4997 )
@@ -156,6 +160,7 @@ visible = false
 [node name="FinalMenu" parent="." instance=ExtResource( 5 )]
 theme = SubResource( 7 )
 
+[connection signal="level_completed" from="." to="." method="_on_Main_level_completed"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="retried" from="FinalMenu" to="." method="_on_FinalMenu_retried"]
