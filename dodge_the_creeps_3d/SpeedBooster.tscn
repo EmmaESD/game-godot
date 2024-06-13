@@ -15,11 +15,12 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.794796, -0.00223493, 0.606872, 0.606877, 0.00292698, -0.794791, 0, 0.999993, 0.00368268, 1.99425, 2.60034, -0.249826 )
+transform = Transform( 0.794796, -0.00223493, 0.606872, 0.606877, 0.00292698, -0.794791, 0, 0.999993, 0.00368268, 1.994, 3, 0 )
 mesh = SubResource( 2 )
 
 [node name="star" parent="MeshInstance" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51419, 0, 0.0975934 )
+physics_interpolation_mode = 2
+transform = Transform( 0.98488, -0.000630606, 0.173229, 0.00063138, 0.999999, 5.06432e-05, -0.17323, 5.95038e-05, 0.984879, -3.04913, -0.414889, -0.264017 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
