@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://PauseHandler.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Level1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://MobKat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Level2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -66,7 +67,7 @@ material/0 = SubResource( 4 )
 curve = SubResource( 5 )
 
 [node name="SpawnLocation" type="PathFollow" parent="SpawnPath"]
-transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 5.70808, 0, -15 )
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 4.90104, 0.894267, -35.0008 )
 offset = 8.29177
 rotation_mode = 1
 cubic_interp = false
@@ -127,6 +128,9 @@ environment = ExtResource( 4 )
 
 [node name="Level1" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245171, 1.90735e-06, 0.0941353 )
+
+[node name="Level2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -184.996, 0, 0 )
 
 [node name="SpeedBooster" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7952, -0.0943699, 24.4997 )
