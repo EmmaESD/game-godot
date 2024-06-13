@@ -4,6 +4,7 @@ export(PackedScene) var mob_scene
 
 signal playerDead
 signal finalScore(score_number)
+
 signal level_completed
 
 var score = 0
@@ -14,6 +15,7 @@ onready var timer: Timer = $UserInterface/TimeLabel/Timer
 onready var time_label: Label = $UserInterface/TimeLabel
 onready var final_menu = $FinalMenu
 onready var player = $Player
+
 
 func _ready():
 	randomize()
@@ -46,8 +48,19 @@ func _on_MobTimer_timeout():
 		mob.connect("squashed", self, "_on_Mob_squashed")
 		mob.initialize(mob_spawn_location.translation, player_position)
 
+	add_child(mob)
+	# Connect the mob's "squashed" signal to the ScoreLabel's "_on_Mob_squashed" method.
+	# Capture and ignore the return value of the connect() function
+	mob.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
+	mob.connect("squashed", self, "_on_Mob_squashed")
+	mob.initialize(mob_spawn_location.translation, player_position)
+	
 func _on_Mob_squashed():
 	score += 1
+	
+onready var final_menu : = $FinalMenu
+onready var player : = $Player
+var play_time : = 0.0
 
 func _process(delta: float) -> void:
 	play_time += delta
@@ -56,6 +69,10 @@ func _on_Player_hit():
 	$MobTimer.stop()
 	$UserInterface/Retry.show()
 	emit_signal("playerDead")
+
+	self.connect("finalScore", $PauseHandler/UserInterface/Pause/BestScore, "_on_final_score")
+	emit_signal("finalScore", score)
+	
 
 func _on_Goal_body_entered():
 	$MobTimer.stop()

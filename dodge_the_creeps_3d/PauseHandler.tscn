@@ -20,8 +20,8 @@ color = Color( 0, 0, 0, 0.447059 )
 
 [node name="Label" type="Label" parent="UserInterface/Pause"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
+
 anchor_bottom = 0.5
 margin_left = -110.0
 margin_top = -232.0
@@ -34,4 +34,6 @@ margin_left = 54.0
 margin_top = 126.0
 margin_right = 666.0
 margin_bottom = 478.0
+text = "Meilleurs scores :
+
 script = ExtResource( 3 )
