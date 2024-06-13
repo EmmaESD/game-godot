@@ -1,18 +1,13 @@
-
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PauseHandler.gd" type="Script" id=1]
 [ext_resource path="res://ui_theme.tres" type="Theme" id=2]
 [ext_resource path="res://fonts/AldotheApache.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://BestScore.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 62
 font_data = ExtResource( 3 )
-
-[ext_resource path="res://PauseHandler.gd" type="Script" id=1]
-[ext_resource path="res://ui_theme.tres" type="Theme" id=2]
-[ext_resource path="res://BestScore.gd" type="Script" id=3]
-
 
 [node name="PauseHandler" type="Node"]
 pause_mode = 2
@@ -24,6 +19,7 @@ anchor_bottom = 1.0
 theme = ExtResource( 2 )
 
 [node name="Pause" type="ColorRect" parent="UserInterface"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.447059 )
@@ -31,21 +27,19 @@ color = Color( 0, 0, 0, 0.447059 )
 [node name="Label" type="Label" parent="UserInterface/Pause"]
 anchor_left = 0.5
 anchor_right = 0.5
-
 anchor_bottom = 0.5
 margin_left = -239.0
-margin_top = -14.0
+margin_top = 27.0
 margin_right = 283.0
 margin_bottom = 34.0
 custom_fonts/font = SubResource( 1 )
-
 text = "Le jeu est en pause"
 
 [node name="BestScore" type="RichTextLabel" parent="UserInterface/Pause"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -228.0
-margin_top = 135.0
+margin_left = -258.0
+margin_top = 132.0
 margin_right = 272.0
 margin_bottom = 369.0
-script = ExtResource( 3 )
+script = ExtResource( 4 )

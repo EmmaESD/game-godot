@@ -74,8 +74,11 @@ func _process(delta : float) -> void:
 	
 func _on_Player_hit():
 	$MobTimer.stop()
+	print("player hit")
 	$UserInterface/Retry.show()
+	$UserInterface/Retry/Label.show()
 	emit_signal("playerDead")
+	stop_timer()
 	
 func _on_Goal_body_entered():
 	$MobTimer.stop()
